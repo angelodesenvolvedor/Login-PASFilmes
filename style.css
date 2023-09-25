@@ -1,4 +1,4 @@
-/* Estilos gerais */
+/* Estilos globais */
 body {
     padding: 0;
     margin: 0;
@@ -6,10 +6,12 @@ body {
     width: 100%;
     position: relative;
     background-image: url(./background.jpg);
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden; /* Impede a rolagem em dispositivos móveis */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body::before {
@@ -19,45 +21,31 @@ body::before {
     height: 100%;
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
 }
 
-/* Estilos do logotipo */
-.logo img {
-    height: 45px;
-    width: 167px;
-}
-
-.header {
-    padding: 20px 50px;
-    position: relative;
-    z-index: 10;
-}
-
-/* Estilos do formulário de login */
+/* Contêiner principal */
 .login_body {
     padding: 20px;
-    z-index: 90;
-    position: relative;
     max-width: 450px;
-    height: auto; /* Remova a altura fixa */
-    margin: 0 auto; /* Centraliza o formulário horizontalmente */
+    height: auto;
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 10px;
     box-sizing: border-box;
-    transform: translateX(-50%);
+    text-align: center;
 }
 
+/* Título do formulário */
 .login_body h2 {
-    font-size: 24px;
+    font-size: 32px;
     color: #fff;
     margin-top: 0;
+    padding-top: 20px;
 }
 
+/* Campos de entrada */
 .login_body input {
-    height: 40px;
+    height: 50px;
     width: 100%;
     color: #fff;
     background-color: #333;
@@ -66,19 +54,12 @@ body::before {
     padding-left: 15px;
     box-sizing: border-box;
     outline: none;
-    margin-bottom: 10px;
-}
-
-.login_body input:hover {
-    background-color: #444;
-}
-
-.input_box {
     margin-bottom: 20px;
 }
 
+/* Botão de envio */
 .login_body button {
-    height: 40px;
+    height: 50px;
     width: 100%;
     color: #fff;
     background-color: red;
@@ -87,25 +68,16 @@ body::before {
     font-size: 16px;
     border: none;
     margin-bottom: 10px;
-}
-
-.login_body button:hover {
-    background-color: #fc1722;
     cursor: pointer;
 }
 
-/* Estilos de suporte e formulário responsivo */
+/* Links e opções de suporte */
 .support {
     display: flex;
-    color: #b3b3b3;
     justify-content: space-between;
+    color: #b3b3b3;
     font-size: 12px;
-    margin-bottom: 5px;
-}
-
-.support input {
-    width: 15px;
-    height: 15px;
+    margin-bottom: 15px;
 }
 
 .remember {
@@ -113,98 +85,25 @@ body::before {
     align-items: center;
 }
 
-.remember span {
-    margin-right: 5px;
-    height: 25px;
-}
-
 .help a {
     text-decoration: none;
     color: #737373;
 }
 
-.help a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos de login com Facebook */
-.login_facebook {
-    display: flex;
-    align-items: center;
-    color: #737373;
-    margin-bottom: 20px;
-}
-
-.login_facebook span {
-    margin-right: 5px;
-    font-size: 13px;
-}
-
-.login_facebook span a {
-    text-decoration: none;
-    color: #737373;
-}
-
-/* Estilos de inscrição e termos */
-.sign_up {
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.sign_up a {
-    color: #fff;
-    font-size: 16px;
-    text-decoration: none;
-}
-
-.sign_up a:hover {
-    text-decoration: underline;
-}
-
-.terms {
+.login_footer {
     color: #737373;
     font-size: 13px;
-    text-align: center;
+    margin-top: 20px;
 }
 
-.terms a {
+.login_footer a {
     text-decoration: none;
     color: #0071eb;
 }
 
-.terms a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos responsivos para dispositivos móveis */
-@media (max-width: 768px) {
-    body {
-        background-size: auto; /* Evita a imagem de plano de fundo esticada */
-    }
-
+/* Estilos para dispositivos móveis */
+@media screen and (max-width: 480px) {
     .login_body {
-        padding: 10px;
-        max-width: 90%;
-    }
-
-    .login_body h2 {
-        font-size: 20px;
-    }
-
-    .login_body input,
-    .login_body button {
-        height: 35px;
-        font-size: 14px;
-    }
-
-    .login_facebook {
-        margin-bottom: 10px;
-    }
-
-    .sign_up,
-    .terms {
-        font-size: 14px;
+        width: 90%;
     }
 }
